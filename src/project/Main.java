@@ -28,12 +28,15 @@ public class Main {
             System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
 
             for(Product product : productList) {
-                System.out.println(productButton + ". " + product.getName() + " | " + product.getPrice() + " | " + product.getExplain());
+                System.out.println(productButton + ". "
+                        + product.getName() + " | "
+                        + String.format("%,d원", product.getPrice()) + " | "
+                        + product.getExplain());
                 productButton++;
             }
 
             //종료 구현
-            System.out.println("0. 종료      | 프로그램 종료 ");
+            System.out.println("0. 종료         | 프로그램 종료 ");
 
             int exit = sc.nextInt();
             if (exit == 0) {
