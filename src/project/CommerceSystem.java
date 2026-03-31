@@ -34,5 +34,30 @@ public class CommerceSystem {
 
     //기능
 
+    public void start() {
+        while (true) {
+            int productButton = 1;
+
+            System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
+
+            for(Product product : productList) {
+                System.out.println(productButton + ". "
+                        + product.getName() + " | "
+                        + String.format("%,d원", product.getPrice()) + " | "
+                        + product.getExplain());
+                productButton++;
+            }
+
+            //종료 구현
+            System.out.println("0. 종료         | 프로그램 종료 ");
+
+            int exit = sc.nextInt();
+            if (exit == 0) {
+                System.out.println("커머스 플랫폼을 종료합니다.");
+                break;
+            }
+        }
+    }
+
 
 }
