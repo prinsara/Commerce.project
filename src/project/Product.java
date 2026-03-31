@@ -21,6 +21,7 @@ public class Product {
      * @param inventory 재고수량
      */
     //생성자
+
     public Product(String name, int price, String explain, int inventory) {
         this.name = name;
         this.price = price;
@@ -29,4 +30,20 @@ public class Product {
     }
 
     //기능
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
+
+    public int getInventory() {
+        return inventory;
+    }
 }
