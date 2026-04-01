@@ -66,7 +66,9 @@ public class CommerceSystem {
                 int productButton = 1;
 
                 for (Product product : productList) {
-                    System.out.println(productButton + ". " + product.getName() + " | " + String.format("%,d원", product.getPrice()) + " | " + product.getExplain());
+                    System.out.println(productButton + ". " + product.getName() + " | "
+                            + String.format("%,d원", product.getPrice()) + " | "
+                            + product.getExplain());
                     productButton++;
                 }
 
@@ -75,11 +77,19 @@ public class CommerceSystem {
                 int productInput = sc.nextInt();
 
                 // 7. 범위
-                if (productInput < 0 || productInput > productList.size()) {
-                    System.out.println("범위 내에서만 선택 가능합니다. 다시 입력해주세요.");
-                    continue;
-                } else if (productInput == 0) {
+                if (productInput == 0) {
                     break;
+                }
+                if (!(productInput < 0 || productInput > productList.size())) {
+                    //찾기
+                    Product selectedProduct = productList.get(productInput - 1);
+
+                    System.out.println("선택한 상품: " + selectedProduct.getName() + " | "
+                            + selectedProduct.getPrice() + " | "
+                            + selectedProduct.getExplain() + " | "
+                            + selectedProduct.getInventory());
+                }  else {
+                    System.out.println("범위 내에서만 선택 가능합니다. 다시 입력해주세요.");
                 }
             }
         }
