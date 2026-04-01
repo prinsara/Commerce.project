@@ -40,6 +40,35 @@ public class Main {
 
         //카테고리 묶기
         List<Category> categoryList = new ArrayList<>(List.of(eletronic, clothing, food));
+
+        //커머스 시스템에 카테고리 리스트 넣어주기
+        CommerceSystem commerceSystem = new CommerceSystem(categoryList, sc);
+        commerceSystem.start();
+
+
     }
 }
 
+//[ 실시간 커머스 플랫폼 메인 ]
+//1. 전자제품
+//2. 의류
+//3. 식품
+//0. 종료      | 프로그램 종료
+//1 <- // 1을 입력
+//
+//[ 전자제품 카테고리 ]
+//1. Galaxy S24     | 1,200,000원 | 최신 안드로이드 스마트폰
+//2. iPhone 15      | 1,350,000원 | Apple의 최신 스마트폰
+//3. MacBook Pro    | 2,400,000원 | M3 칩셋이 탑재된 노트북
+//4. AirPods Pro    |   350,000원 | 노이즈 캔슬링 무선 이어폰
+//0. 뒤로가기
+//2 <- // 2를 입력
+//선택한 상품: iPhone 15 | 1,350,000원 | Apple의 최신 스마트폰 | 재고: 30개
+//
+//[ 실시간 커머스 플랫폼 메인 ]
+//1. 전자제품
+//2. 의류
+//3. 식품
+//0. 종료      | 프로그램 종료
+//0 <- // 0을 입력
+//커머스 플랫폼을 종료합니다.
