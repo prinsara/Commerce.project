@@ -44,7 +44,7 @@ public class CommerceSystem {
             int categoryInput = sc.nextInt();
 
             //입력 범위, 종료
-            if (categoryInput < 0 || categoryInput > categoryList.size()) {
+            if (0 > categoryInput || categoryInput > categoryList.size()) {
                 System.out.println("범위 내에서만 선택 가능합니다. 다시 입력해주세요.");
                 continue;
             } else if (categoryInput == 0) {
@@ -78,7 +78,7 @@ public class CommerceSystem {
                 if (productInput == 0) {
                     break;
                 }
-                if (productInput > 0 && productInput <= productList.size()) {
+                if (0 < productInput && productInput <= productList.size()) {
                     //찾기
                     Product selectedProduct = productList.get(productInput - 1);
 
