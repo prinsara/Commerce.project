@@ -11,7 +11,6 @@ public class CommerceSystem {
 
 
     //생성자
-
     /**
      * @param sc Scanner / 입력
      */
@@ -23,7 +22,6 @@ public class CommerceSystem {
 
 
     //기능
-
     public void start() {
 
         //반복
@@ -80,7 +78,7 @@ public class CommerceSystem {
                 if (productInput == 0) {
                     break;
                 }
-                if (!(productInput < 0 || productInput > productList.size())) {
+                if (productInput > 0 && productInput <= productList.size()) {
                     //찾기
                     Product selectedProduct = productList.get(productInput - 1);
 
