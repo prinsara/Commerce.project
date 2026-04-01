@@ -43,12 +43,33 @@ public class CommerceSystem {
 
             // 2. 카테고리 번호 입력 값 받기
             System.out.println("0. 종료    |  프로그램 종료");
-            int exit = sc.nextInt();
-            if (exit == 0 ) {
+            int categoryInput = sc.nextInt();
+            if (categoryInput == 0) {
                 System.out.println("커머스 플랫폼을 종료합니다.");
                 break;
             }
 
+            // 3. 카테고리 내 맞는 카테고리 상품 보여주기
+            Category selectedCategory = categoryList.get(categoryInput - 1);
+
+            int productButton = 1;
+
+            List<Product> productList = selectedCategory.getProductList();
+
+            System.out.println("[ " + selectedCategory.getCategoryName() + " 카테고리 ]");
+            for (Product product : productList) {
+                System.out.println(productButton + ". " + product.getName() + " | "
+                        + String.format("%,d원", product.getPrice()) + " | "
+                        + product.getExplain());
+                productButton++;
+            }
+
+
+            System.out.println("0. 뒤로가기");
+            int productInput = sc.nextInt();
+            if (productInput == 0) {
+                continue;
+            }
 
         }
     }

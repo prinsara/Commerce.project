@@ -30,4 +30,11 @@ public class Category {
         return categoryName;
     }
 
+    /**
+     * @return 제품 목록을 반환해준다.
+     */
+    public List<Product> getProductList() {
+        return productList;
+    }
+
 }
