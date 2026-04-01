@@ -87,8 +87,8 @@ public class CommerceSystem {
                     System.out.println("선택한 상품: " + selectedProduct.getName() + " | "
                             + selectedProduct.getPrice() + " | "
                             + selectedProduct.getExplain() + " | "
-                            + selectedProduct.getInventory());
-                }  else {
+                            + selectedProduct.getInventory() + "개\n");
+                } else {
                     System.out.println("범위 내에서만 선택 가능합니다. 다시 입력해주세요.");
                 }
             }
