@@ -10,7 +10,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-
         //전자제품 목록 객체
         Product galaxy = new Product("Galaxy S25", 1200000, "최신 안드로이드 스마트폰", 100);
         Product iPhone = new Product("iPhone 16", 1350000, "Apple의 최신 스마트폰", 10000);
@@ -29,15 +28,18 @@ public class Main {
         Product apple = new Product("화성에서 가져온 사과", 99999999, "사라가 직접 화성에서 발견한 사과다. 아주 희귀", 99999999);
         Product tylenol = new Product("약이 아닌 식품 타이레놀", 10, "두통에 직빵이다. 맛은 없다.", 119);
 
-
+        //각 카테고리 별로 묶어둔 리스트
         List<Product> eletronicList = new ArrayList<>(List.of(galaxy, iPhone, macBook, airPods));
         List<Product> clothingList = new ArrayList<>(List.of(dior, adidas, chanel, celine));
         List<Product> foodList = new ArrayList<>(List.of(candy, onion, apple, tylenol));
 
-        CommerceSystem commerceSystem = new CommerceSystem(eletronicList, sc);
-        commerceSystem.start();
+        //각 카테고리 내에 리스트 연결하기
+        Category eletronic = new Category(eletronicList, "전자제품");
+        Category clothing = new Category(clothingList, "의류");
+        Category food = new Category(foodList, "식품");
 
-
+        //카테고리 묶기
+        List<Category> categoryList = new ArrayList<>(List.of(eletronic, clothing, food));
     }
 }
 
